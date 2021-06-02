@@ -8,6 +8,7 @@ public class ContactPage {
     }
 
     public ProductListPage SearchByAutoComplete(){
+
         return new ProductListPage(driver);
     }
 }
