@@ -3,9 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class UpdateAdressPage {
+public class UpdateAdressPage extends CommonClass{
 
-    WebDriver driver;
 
     By firstNameIdSelector = By.id("firstname");
     By lastNameIdSelector = By.id("lastname");
@@ -18,7 +17,7 @@ public class UpdateAdressPage {
     By buttonSaveIdSelector = By.id("submitAddress");
 
     public UpdateAdressPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     private void enterGeneric(String text, By selector){

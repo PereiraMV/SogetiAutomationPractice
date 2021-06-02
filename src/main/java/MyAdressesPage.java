@@ -4,9 +4,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class MyAdressesPage {
+public class MyAdressesPage extends CommonClass{
 
-    WebDriver driver;
     By adressesClassName = By.cssSelector(".address");
     By phoneClassName = By.className(".address_phone_mobile");
     By adressNameClassName = By.className(".address_name");
@@ -14,7 +13,7 @@ public class MyAdressesPage {
     By ButtonUpdateCssSelector = By.cssSelector("[title='Update']");
     By ButtonDeleteCssSelector = By.cssSelector("[title='Delete']");
     public MyAdressesPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     private WebElement getAdressBox(int index){

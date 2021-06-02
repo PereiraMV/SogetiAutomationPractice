@@ -3,9 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AuthenticationPage {
+public class AuthenticationPage extends CommonClass {
 
-    WebDriver driver;
     By emailAdress = By.id("email");
     By passWord = By.id("passwd");
     By buttonSubmitIdSelector = By.id("SubmitLogin");
@@ -13,7 +12,7 @@ public class AuthenticationPage {
 
     public AuthenticationPage(WebDriver driver){
 
-        this.driver = driver;
+        super(driver);
     }
 
     public MyAccountPage SignIn(String email, String password){

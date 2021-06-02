@@ -1,12 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ProductListPage {
+public class ProductListPage extends CommonClass{
 
-    WebDriver driver;
     By searchTitleTagSelector = By.tagName("h1");
     public ProductListPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean isSearchVisible(){
