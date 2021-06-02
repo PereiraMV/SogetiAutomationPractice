@@ -2,15 +2,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MyAccountPage {
+public class MyAccountPage extends CommonClass{
 
-    WebDriver driver;
     By userName = By.cssSelector(".account>span");
     By TitleMyAccount = By.id("slider_row");
     By MyAddresses = By.cssSelector("[title='Addresses']");
 
     public MyAccountPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     public String getUserName(){

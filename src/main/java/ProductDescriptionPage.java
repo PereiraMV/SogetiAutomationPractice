@@ -2,17 +2,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductDescriptionPage {
-    WebDriver driver;
+public class ProductDescriptionPage extends CommonClass{
     String itemTitleSearch;
     By searchTitleTagSelector = By.tagName("h1");
 
     public ProductDescriptionPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
         this.itemTitleSearch = "";
     }
     public ProductDescriptionPage(WebDriver driver, String itemTitle){
-        this.driver = driver;
+        super(driver);
         this.itemTitleSearch = itemTitle;
     }
 

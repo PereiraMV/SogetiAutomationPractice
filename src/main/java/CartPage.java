@@ -1,10 +1,9 @@
 import org.openqa.selenium.WebDriver;
 
-public class CartPage {
-    WebDriver driver;
+public class CartPage extends CommonClass {
 
     public CartPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     public ProductListPage Search(){
