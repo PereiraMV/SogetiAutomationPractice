@@ -6,8 +6,4 @@ public class ContactPage extends CommonClass {
         super(driver);
     }
 
-    public ProductListPage SearchByAutoComplete(){
-
-        return new ProductListPage(driver);
-    }
 }

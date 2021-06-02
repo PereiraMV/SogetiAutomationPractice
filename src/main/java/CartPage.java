@@ -6,11 +6,5 @@ public class CartPage extends CommonClass {
         super(driver);
     }
 
-    public ProductListPage Search(){
-        return new ProductListPage(driver);
-    }
 
-    public ProductListPage SearchByAutoComplete(){
-        return new ProductListPage(driver);
-    }
 }
