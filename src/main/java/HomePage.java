@@ -47,15 +47,20 @@ public class HomePage {
         WebElement listResult = wait.until( ExpectedConditions.elementToBeClickable(resultSearchAutoCompleteClassSelector));
 
         if (listResult == null){
-
+            throw new ArrayIndexOutOfBoundsException("The element searched is not recognize or the time expired and couldn't find any product corresponding");
         }
 
         List<WebElement> ListItemInList = listResult.findElements(resultListItemCssSelector);
 
         Integer numberItem = ListItemInList.size();
-        System.out.println(numberItem);
         // Regarder la taille du tableau
-        ListItemInList.get(0).click();
+
+        if ( index < 0 || index > numberItem ){
+
+            throw new ArrayIndexOutOfBoundsException("The index indicated is out of bound regarding the result list");
+        }
+
+        ListItemInList.get(index).click();
 
 
         return new ProductDescriptionPage(driver);
