@@ -9,7 +9,7 @@ import java.util.List;
 
 public class HomePage {
     WebDriver driver;
-    By buttonAccountClassSelector = By.className("account");
+    By buttonAccountClassSelector = By.className("login");
     By buttonCartClassSelector = By.className("shopping_cart");
     By searchBarIdSelector = By.id("search_query_top");
     By buttonSearchcssSelector = By.cssSelector("[name='submit_search']");
@@ -21,7 +21,8 @@ public class HomePage {
     }
 
     public AuthenticationPage openSignInPage(){
-
+        WebDriverWait wait = new WebDriverWait(driver,5);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(buttonAccountClassSelector)));
         driver.findElement(buttonAccountClassSelector).click();
         return new AuthenticationPage(driver);
     }
@@ -55,15 +56,15 @@ public class HomePage {
         Integer numberItem = ListItemInList.size();
         // Regarder la taille du tableau
 
-        if ( index < 0 || index > numberItem ){
+        if ( index < 0 || index >= numberItem ){
 
             throw new ArrayIndexOutOfBoundsException("The index indicated is out of bound regarding the result list");
         }
-
+        String itemTitle = ListItemInList.get(index).getText();
         ListItemInList.get(index).click();
 
 
-        return new ProductDescriptionPage(driver);
+        return new ProductDescriptionPage(driver, itemTitle);
     }
 
 

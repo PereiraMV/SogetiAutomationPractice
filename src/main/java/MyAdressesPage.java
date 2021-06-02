@@ -7,12 +7,12 @@ import java.util.List;
 public class MyAdressesPage {
 
     WebDriver driver;
-    By adressesClassName = By.className(".address");
+    By adressesClassName = By.cssSelector(".address");
     By phoneClassName = By.className(".address_phone_mobile");
     By adressNameClassName = By.className(".address_name");
     By adressPlaceClassName = By.className(".address_address1");
-    By ButtonUpdateCssSelector = By.className("[title='Update']");
-    By ButtonDeleteCssSelector = By.className("[title='Delete']");
+    By ButtonUpdateCssSelector = By.cssSelector("[title='Update']");
+    By ButtonDeleteCssSelector = By.cssSelector("[title='Delete']");
     public MyAdressesPage(WebDriver driver){
         this.driver = driver;
     }
@@ -21,7 +21,7 @@ public class MyAdressesPage {
 
         List<WebElement> adresses = driver.findElements(adressesClassName);
 
-        if (index > 1 && index < adresses.size()){
+        if (index >= 0 && index < adresses.size()){
             return adresses.get(index);
         }
         else{
