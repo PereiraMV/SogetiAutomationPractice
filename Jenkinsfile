@@ -33,6 +33,7 @@ pipeline {
     stages {
         stage('Execution rights') {
             steps {
+                echo "Start Tests"
             }
         }
         stage('Test') {
