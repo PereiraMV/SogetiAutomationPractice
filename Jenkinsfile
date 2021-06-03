@@ -25,6 +25,19 @@
             ]
         ])
     ])
+String executionTestString = ""
+
+switch(params.Env){
+    case "2":
+    executionTestString = "TestUS"+params.Env+".UserConnexion "+"TestUS"+params.Env+".UserConnexionWrongPwd"
+    case "4":
+    executionTestString = "TestUS"+params.Env+".SearchArticle "+"TestUS"+params.Env+".SearchByAutoCompleteArticle"
+    case "6":
+    executionTestString = "TestUS"+params.Env+".verificationUserAdress "+"TestUS"+params.Env+".modificationAdress "+"TestUS"+params.Env+".createAdress"
+    default:
+    executionTestString = ""
+
+}
 
 String executionTest = "TestUS"+params.Env+".UserConnexion"
 
