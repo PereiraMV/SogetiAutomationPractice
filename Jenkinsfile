@@ -44,8 +44,6 @@ pipeline {
     stages {
         stage('Execution rights') {
             steps {
-
-                echo "${params.Env}"
                 echo "${executionTest}"
             }
         }
