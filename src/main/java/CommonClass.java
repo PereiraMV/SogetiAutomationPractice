@@ -13,6 +13,7 @@ public class CommonClass {
     By resultSearchAutoCompleteClassSelector = By.className("ac_results");
     By resultListItemCssSelector = By.cssSelector("li");
     By buttonAccountClassSelector = By.className("login");
+    By buttonConctactUsCssSelector = By.cssSelector("[title='Contact Us']");
     By buttonCartClassSelector = By.className("shopping_cart");
 
     public CommonClass(WebDriver driver){
@@ -30,6 +31,13 @@ public class CommonClass {
         driver.findElement(buttonCartClassSelector).click();
         return new CartPage(driver);
     }
+
+    public ContactPage openContactPage(){
+
+        driver.findElement(buttonConctactUsCssSelector).click();
+        return new ContactPage(driver);
+    }
+
 
     public ProductListPage search(String elementSearched){
 

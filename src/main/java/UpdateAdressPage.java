@@ -11,7 +11,7 @@ public class UpdateAdressPage extends CommonClass{
     By adressNameIdSelector = By.id("address1");
     By citydSelector = By.id("city");
     By adressNickNameIdSelector = By.id("alias");
-    By phoneIdSelector = By.id("phone");
+    By phoneIdSelector = By.id("phone_mobile");
     By postCodeIdSelector = By.id("postcode");
     By stateIdSelector = By.id("id_state");
     By buttonSaveIdSelector = By.id("submitAddress");
