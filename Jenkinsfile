@@ -33,7 +33,7 @@ pipeline {
         stage('Execution rights') {
             steps {
 
-                bat 'echo ${params.Env}'
+                echo "${params.Env}"
             }
         }
         stage('Test') {
