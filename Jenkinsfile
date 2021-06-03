@@ -26,6 +26,7 @@
         ])
     ])
 
+String executionTest = "TestUS${params.Env}.UserConnexion"
 
 pipeline {
     agent any
@@ -38,8 +39,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                String var = "TestUS${params.Env}.UserConnexion"
-                bat 'gradlew.bat clean test --tests "${var}"'
+
+                bat 'gradlew.bat clean test --tests "${executionTest}"'
                 bat 'echo Fin du Test User Connexion'
 
 
