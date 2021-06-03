@@ -44,7 +44,7 @@ pipeline {
             steps {
 
                 bat "gradlew.bat clean test --tests ${params.testClass}"
-                bat 'echo Fin du Test User Connexion'
+                bat 'echo Fin du Test '
 
 
 

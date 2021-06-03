@@ -106,7 +106,7 @@ public class TestUS6 extends CommonTestClass {
 
     }
 
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test
     public void createAdress(){
 
         //Arrange
