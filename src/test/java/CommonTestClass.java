@@ -17,6 +17,6 @@ public class CommonTestClass {
 
     @AfterMethod
     public void fermerChrome(){
-        //driver.quit();
+        driver.quit();
     }
 }
