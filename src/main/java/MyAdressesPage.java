@@ -1,6 +1,9 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -74,8 +77,20 @@ public class MyAdressesPage extends CommonClass{
     }
 
     public MyAdressesPage deleteAdress(int index){
-        getAdressBox(index).findElement(ButtonDeleteCssSelector).click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(getAdressBox(index).findElement(ButtonDeleteCssSelector))).click();
+
+
+
         driver.switchTo().alert().accept();
+        try{
+            wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(getAdressBox(index).findElement(ButtonDeleteCssSelector))));
+
+        }catch(ArrayIndexOutOfBoundsException e){
+
+        }
+
+
         return this;
     }
 
