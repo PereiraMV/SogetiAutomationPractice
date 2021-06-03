@@ -11,7 +11,7 @@ public class TestUS2 extends CommonTestClass {
 
 
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void UserConnexion(){
         //Cas de test 3 - Connexion à un compte Utilisateur
 
@@ -28,12 +28,11 @@ public class TestUS2 extends CommonTestClass {
                 .isMyAccountVisible();
 
         //Assert
-
         Assert.assertTrue(accountVisibility);
 
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void UserConnexionWrongPwd(){
         //Cas de test 4 - Connexion à  un compte avec mot de passe érroné
 

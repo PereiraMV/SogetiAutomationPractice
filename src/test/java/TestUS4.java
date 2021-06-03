@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 public class TestUS4 extends CommonTestClass {
 
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void SearchArticle(){
         //Cas 8 : Recherche d'un article à partir d'une saisie libre dans la barre de recherche
 
@@ -24,7 +24,7 @@ public class TestUS4 extends CommonTestClass {
         Assert.assertTrue(searchDisplayed);
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void SearchByAutoCompleteArticle(){
         //Cas 9 : Recherche d'un article à partir des suggestions du moteur de recherche
 
