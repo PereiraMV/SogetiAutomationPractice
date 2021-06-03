@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                var = "TestUS${params.Env}.UserConnexion"
+                String var = "TestUS${params.Env}.UserConnexion"
                 bat 'gradlew.bat clean test --tests "${var}"'
                 bat 'echo Fin du Test User Connexion'
 
