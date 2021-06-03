@@ -57,28 +57,4 @@ public class TestUS2 extends CommonTestClass {
         Assert.assertEquals(observedErrorMessage,expectedErrorMessage);
 
     }
-
-    @Test
-    public void test(){
-
-        HomePage homePage = new HomePage(driver);
-
-        //homePage.searchByAutoComplete("dress",0);
-        homePage.searchByAutoComplete("summer",0);
-        homePage.openSignInPage()
-                .SignIn("pereiramarc@hotmail.fr","testautomation123")
-                .openMyAdressesPage()
-                .openUpdateAdressPage(0)
-                .enterAdressName("4 rue BillBao")
-                .enterAdressNickName("My Adress Change")
-                .enterCity("BouBou")
-                .enterFirstName("Ma")
-                .enterLastName("Couscous")
-                .enterState("Missouri")
-                .saveAdresse();
-
-
-
-    }
-
 }
