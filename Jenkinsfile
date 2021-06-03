@@ -26,7 +26,6 @@
         ])
     ])
 
-}
 
 pipeline {
     agent any
