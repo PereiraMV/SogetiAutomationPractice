@@ -68,8 +68,14 @@ public class MyAdressesPage extends CommonClass{
         return new UpdateAdressPage(driver);
     }
 
+    public UpdateAdressPage openUpdateAdressPageWithCreate(){
+        driver.findElement(ButtonAddAdressCssSelector).click();
+        return new UpdateAdressPage(driver);
+    }
+
     public MyAdressesPage deleteAdress(int index){
         getAdressBox(index).findElement(ButtonDeleteCssSelector).click();
+        driver.switchTo().alert().accept();
         return this;
     }
 

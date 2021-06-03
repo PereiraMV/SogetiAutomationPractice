@@ -85,6 +85,7 @@ public class TestUS6 extends CommonTestClass {
         String currentLastName = myAdressesPage.getUserLastname(indexAdress);
         String currentCity = myAdressesPage.getCity(indexAdress);
         String currentState = myAdressesPage.getState(indexAdress);
+
         //Assert
 
         Assert.assertEquals(currentFirstName, expectedNewFirstName);
@@ -118,7 +119,7 @@ public class TestUS6 extends CommonTestClass {
         String expectedNewCity = "Marseille";
         String expectedNewState = "Hawaii";
         String expectedNewPostCode = "75002";
-
+        Integer indexAdressCreate = 1;
         //Act
         HomePage homePage = new HomePage(driver);
         MyAdressesPage myAdressesPage =
@@ -126,16 +127,40 @@ public class TestUS6 extends CommonTestClass {
                         .openSignInPage()
                         .SignIn(email,password)
                         .openMyAdressesPage()
-                        .c
+                        .openUpdateAdressPageWithCreate()
                         .enterFirstName(expectedNewFirstName)
                         .enterLastName(expectedNewLastName)
                         .enterCity(expectedNewCity)
                         .enterState(expectedNewState)
+                        .enterAdressName(expectedNewAdressName)
+                        .enterAdressNickName(expectedNewAdressSurname)
+                        .enterPhone(expectedNewPhone)
+                        .enterPostCode(expectedNewPostCode)
                         .saveAdresse();
+
+        String currentAdressName = myAdressesPage.getAdressName(indexAdressCreate);
+        String currentAdressSurname = myAdressesPage.getAdressSurname(indexAdressCreate);
+        String currentFirstName = myAdressesPage.getUserFirstname(indexAdressCreate);
+        String currentLastName = myAdressesPage.getUserLastname(indexAdressCreate);
+        String currentPhone = myAdressesPage.getPhone(indexAdressCreate);
+        String currentCity = myAdressesPage.getCity(indexAdressCreate);
+        String currentState = myAdressesPage.getState(indexAdressCreate);
+        String currentPostCode = myAdressesPage.getPostCode(indexAdressCreate);
 
         //Assert
 
+        Assert.assertEquals(currentAdressName, expectedNewAdressName);
+        Assert.assertEquals(currentAdressSurname, expectedNewAdressSurname);
+        Assert.assertEquals(currentFirstName, expectedNewFirstName);
+        Assert.assertEquals(currentLastName, expectedNewLastName);
+        Assert.assertEquals(currentPhone, expectedNewPhone);
+        Assert.assertEquals(currentCity, expectedNewCity);
+        Assert.assertEquals(currentState, expectedNewState);
+        Assert.assertEquals(currentPostCode, expectedNewPostCode);
 
+        //Re-Act
+
+        myAdressesPage.deleteAdress(indexAdressCreate);
 
     }
 
