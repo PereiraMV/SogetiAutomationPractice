@@ -30,12 +30,16 @@ String executionTestString = ""
 switch(params.Env){
     case "2":
     executionTestString = "TestUS"+params.Env+".UserConnexion TestUS"+params.Env+".UserConnexionWrongPwd"
+    break
     case "4":
     executionTestString = "TestUS"+params.Env+".SearchArticle TestUS"+params.Env+".SearchByAutoCompleteArticle"
+    break
     case "6":
     executionTestString = "TestUS"+params.Env+".verificationUserAdress TestUS"+params.Env+".modificationAdress TestUS"+params.Env+".createAdress"
+    break
     default:
     executionTestString = ""
+    break
 
 }
 
