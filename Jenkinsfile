@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Execution rights') {
             steps {
+                bat 'echo Start Test'
             }
         }
         stage('Test') {
