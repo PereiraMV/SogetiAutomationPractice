@@ -26,7 +26,7 @@
         ])
     ])
 
-String executionTest = "TestUS"+params.Env+"UserConnexion"
+String executionTest = "TestUS"+params.Env+".UserConnexion"
 
 pipeline {
     agent any
