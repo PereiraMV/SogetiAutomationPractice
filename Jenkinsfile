@@ -44,13 +44,13 @@ pipeline {
     stages {
         stage('Execution rights') {
             steps {
-                echo "${executionTest}"
+                echo "${executionTestString}"
             }
         }
         stage('Test') {
             steps {
 
-                bat 'gradlew.bat clean test --tests '+executionTest
+                bat 'gradlew.bat clean test --tests '+executionTestString
                 bat 'echo Fin du Test User Connexion'
 
 
