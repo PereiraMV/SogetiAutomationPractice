@@ -11,7 +11,7 @@ public class TestUS2 extends CommonTestClass {
 
 
 
-    @Test
+    @Test()
     public void UserConnexion(){
         //Cas de test 3 - Connexion à un compte Utilisateur
 
