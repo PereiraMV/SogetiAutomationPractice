@@ -52,7 +52,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-
+                echo "${executionTest}"
                 bat 'gradlew.bat clean test --tests '+executionTest
                 bat 'echo Fin du Test User Connexion'
 
