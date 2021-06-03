@@ -16,7 +16,7 @@ public class TestUS6 extends CommonTestClass {
     String expectedState = "California";
     String expectedPostCode = "75015";
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void verificationUserAdress(){
         //Cas 13 Vérification des coordonnées du client
 
@@ -54,7 +54,7 @@ public class TestUS6 extends CommonTestClass {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void modificationAdress(){
         //Cas 14: Mettre à jour les coordonnées du client
 
@@ -106,7 +106,7 @@ public class TestUS6 extends CommonTestClass {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void createAdress(){
 
         //Arrange
