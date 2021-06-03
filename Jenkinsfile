@@ -7,19 +7,11 @@ properties([
             filterable: true,
             name: 'Env',
             randomName: 'choice-parameter-5631314439613978',
-            script: [
-                $class: 'GroovyScript',
-                fallbackScript: [
-                    classpath: [],
-                    sandbox: false,
-                    script:
-                        'return[\'Could not get Env\']'
-                ],
                 script: [
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return["Dev","QA","Stage","Prod"]'
+                        'return["2","4","6"]'
                 ]
             ]
         ]
@@ -38,7 +30,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'gradlew.bat clean test --tests "TestUS2.UserConnexion"'
+                bat 'gradlew.bat clean test --tests "TestUS${params.Env}.UserConnexion"'
                 bat 'echo Fin du Test User Connexion'
 
                 bat 'gradlew.bat clean test --tests "TestUS2.UserConnexionWrongPwd"'
