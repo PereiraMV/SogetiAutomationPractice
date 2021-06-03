@@ -40,7 +40,7 @@ pipeline {
         stage('Test') {
             steps {
 
-                bat 'gradlew.bat clean test --tests TestUS'+executionTest+'.UserConnexion'
+                bat 'gradlew.bat clean test --tests '+executionTest
                 bat 'echo Fin du Test User Connexion'
 
 
