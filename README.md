@@ -34,7 +34,7 @@ Les installations necessaires pour ce projet sont:
 Une fois les installations faites le projet peut être cloné avec :
 
  ```bash
-git clone https://github.com/woodsonju/TrocCommunity.git
+git clone https://github.com/PereiraMV/SogetiAutomationPractice.git
 ```
 puis on peut executer les tests avec:
 ```bash
